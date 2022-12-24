@@ -1,9 +1,10 @@
 module GhibliPalettes
 
+import Colors
+import ColorSchemes
 using Colors, ColorSchemes
 
 export ghibli_palettes
-export ColorSchemes
 
 ghibli_palettes::Dict{String, Vector{String}} = Dict("name" => ["MarnieLight1", "MarnieMedium1", "MarnieDark1", "MarnieLight2", "MarnieMedium2", "MarnieDark2", "PonyoLight", "PonyoMedium", "PonyoDark", "LaputaLight", "LaputaMedium", "LaputaDark", "MononokeLight", "MononokeMedium", "MononokeDark", "SpiritedLight", "SpiritedMedium", "SpiritedDark", "YesterdayLight", "YesterdayMedium", "YesterdayDark", "KikiLight", "KikiMedium", "KikiDark", "TotoroLight", "TotoroMedium", "TotoroDark"],
     "color1" => ["#95918EFF", "#28231DFF", "#15110EFF", "#8E938DFF", "#1D271CFF", "#0E130DFF", "#A6A0A0FF", "#4C413FFF", "#262020FF", "#898D90FF", "#14191FFF", "#090D10FF", "#838A90FF", "#06141FFF", "#030A10FF", "#8F9297FF", "#1F262EFF", "#0F1217FF", "#768185FF", "#061A21FF", "#030E12FF", "#8E8C8FFF", "#1C1A1FFF", "#0E0C0FFF", "#85898AFF", "#0A1215FF", "#05090AFF"],
