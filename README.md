@@ -8,7 +8,7 @@ This is a full port of the great R package [ewenme/ghibli](https://github.com/ew
 ```julia
 using GhibliPalettes
 
-# This will give you access to the ghibli dictionary, in your global environment
+# This will give you access to the ghibli dictionary in your global environment
 
 ghibli["MononokeMedium"] # Check the nice oclors
 
@@ -16,8 +16,11 @@ ghibli["MononokeMedium"] # Check the nice oclors
 
 using Plots
 
-plot(
-    [x -> sin(x - a) for a in range(0, π / 2, length = 5)], 0, 2π;
-    palette = ghibli["MononokeMedium"]
-)
+p = plot(title = "MarnieLight1", palette = ghibli["MarnieLight1"])
+for c in eachcol(rand(100, 7))
+    scatter!(p, c)
+end
+display(p)
 ```
+<img src="plots/MarnieLight1.svg">
+<img src="plots/PonyoMedium.svg">
