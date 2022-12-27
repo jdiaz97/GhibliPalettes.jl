@@ -6,7 +6,8 @@ using Colors, ColorSchemes
 
 export ColorSchemes
 export Colors
-export ghibli_palettes
+export ghibli
+export ghibli_schemes
 
 ghibli_palettes::Dict{String, Vector{String}} = Dict("name" => ["MarnieLight1", "MarnieMedium1", "MarnieDark1", "MarnieLight2", "MarnieMedium2", "MarnieDark2", "PonyoLight", "PonyoMedium", "PonyoDark", "LaputaLight", "LaputaMedium", "LaputaDark", "MononokeLight", "MononokeMedium", "MononokeDark", "SpiritedLight", "SpiritedMedium", "SpiritedDark", "YesterdayLight", "YesterdayMedium", "YesterdayDark", "KikiLight", "KikiMedium", "KikiDark", "TotoroLight", "TotoroMedium", "TotoroDark"],
     "color1" => ["#95918EFF", "#28231DFF", "#15110EFF", "#8E938DFF", "#1D271CFF", "#0E130DFF", "#A6A0A0FF", "#4C413FFF", "#262020FF", "#898D90FF", "#14191FFF", "#090D10FF", "#838A90FF", "#06141FFF", "#030A10FF", "#8F9297FF", "#1F262EFF", "#0F1217FF", "#768185FF", "#061A21FF", "#030E12FF", "#8E8C8FFF", "#1C1A1FFF", "#0E0C0FFF", "#85898AFF", "#0A1215FF", "#05090AFF"],
@@ -19,15 +20,24 @@ ghibli_palettes::Dict{String, Vector{String}} = Dict("name" => ["MarnieLight1", 
 )
 
 n::Int64 = length(ghibli_palettes["name"])
+palette::Dict{String, Vector{String}} = ghibli_palettes
+
+global ghibli::Dict{Any, Any} = Dict()
+
 for i in 1:n
-    palette::Dict{String, Vector{String}} = ghibli_palettes
     hexs::Vector{String} = [palette["color1"][i], palette["color2"][i], palette["color3"][i], palette["color4"][i], 
             palette["color5"][i], palette["color6"][i], palette["color7"][i]]
     name::String = palette["name"][i]
-    loadcolorscheme(Symbol(name), parse.(Colorant,hexs), "Ghibli", name)
+    global ghibli = merge(ghibli, Dict(name => parse.(Colorant,hexs)))
 end
 
-# cgrad(:MarnieDark2, categorical = true)
+function ghibli_schemes()
+    for key in keys(ghibli)
+        loadcolorscheme(Symbol(key), parse.(Colorant,ghibli[key]), "Ghibli", key)
+    end
+end
+
+ghibli_schemes()
 
 end # module GhibliPalettes
 
