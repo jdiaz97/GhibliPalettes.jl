@@ -1,7 +1,7 @@
 name = "GhibliPalettes"
 uuid = "90723813-cdbc-4127-ac5b-633cd2ebf9f7"
 authors = ["jdiaz97 <josediazrrnn@gmail.com>"]
-version = "0.1.1"
+version = "0.1.2"
 
 [deps]
 ColorSchemes = "35d6a980-a343-548e-a6ea-1d62b119f2f4"

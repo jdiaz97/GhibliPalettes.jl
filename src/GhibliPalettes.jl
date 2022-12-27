@@ -4,6 +4,8 @@ import Colors
 import ColorSchemes
 using Colors, ColorSchemes
 
+export ColorSchemes
+export Colors
 export ghibli_palettes
 
 ghibli_palettes::Dict{String, Vector{String}} = Dict("name" => ["MarnieLight1", "MarnieMedium1", "MarnieDark1", "MarnieLight2", "MarnieMedium2", "MarnieDark2", "PonyoLight", "PonyoMedium", "PonyoDark", "LaputaLight", "LaputaMedium", "LaputaDark", "MononokeLight", "MononokeMedium", "MononokeDark", "SpiritedLight", "SpiritedMedium", "SpiritedDark", "YesterdayLight", "YesterdayMedium", "YesterdayDark", "KikiLight", "KikiMedium", "KikiDark", "TotoroLight", "TotoroMedium", "TotoroDark"],
