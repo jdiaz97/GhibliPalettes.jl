@@ -31,13 +31,13 @@ for i in 1:n
     global ghibli = merge(ghibli, Dict(name => parse.(Colorant,hexs)))
 end
 
-function ghibli_schemes()
+function load_ghibli()
     for key in keys(ghibli)
         loadcolorscheme(Symbol(key), parse.(Colorant,ghibli[key]), "Ghibli", key)
     end
 end
 
-ghibli_schemes()
+load_ghibli()
 
 end # module GhibliPalettes
 

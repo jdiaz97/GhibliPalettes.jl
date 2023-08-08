@@ -1,6 +1,6 @@
 include("../src/GhibliPalettes.jl")
 
 using .GhibliPalettes
+using ColorSchemes
 
-ghibli["MarnieDark2"]
-
+length(findcolorscheme("ghibli")) == 27
