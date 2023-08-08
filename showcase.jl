@@ -1,6 +1,6 @@
 include("src/GhibliPalettes.jl")
 
-using .GhibliPalettes
+using GhibliPalettes
 using Plots
 
 p = plot(title = "MarnieLight1", palette = :MarnieLight1)

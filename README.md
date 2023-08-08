@@ -12,6 +12,7 @@ using GhibliPalettes
 
 ghibli["MononokeMedium"] # Check the nice colors
 
+GhibliPalettes.load_ghibli() 
 # You are ready to go to use it in plots and cool stuff
 
 using Plots
